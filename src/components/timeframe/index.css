@@ -1,0 +1,20 @@
+.timeframe-container{
+    font-family: Roboto;
+}
+
+.timeframe-selector{
+    padding: 6px 12px;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0px 0px 2px 2px #6e6e6e00;
+    background-color: rgb(228, 227, 226);
+}
+
+.timeframe-label{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.timeframe{
+    font-size: 14px;
+}

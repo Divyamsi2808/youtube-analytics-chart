@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Chart from './components/chart';
+import TimeframeSelector from './components/timeframe';
+import data from './data/sampleData.json';
 import './App.css';
 
 function App() {
+  const [timeframe, setTimeframe] = useState('All Time');
+
+  const handleTimeframeChange = (newTimeframe) => {
+    setTimeframe(newTimeframe);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-container">
+      <TimeframeSelector selectedTimeframe = {timeframe} onTimeframeChange={handleTimeframeChange} />
+      <div className="chart-container">
+        <Chart data={data} timeframe={timeframe} />
+      </div>
     </div>
   );
 }
